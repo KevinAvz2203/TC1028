@@ -25,20 +25,23 @@ import time
 # transformar tablero a txt 
 
 def comprobarControl():
-
+    # Se abre el archivo control para confirmar que jugador es 
     fo = open("control.txt", "r")
     turno = fo.readline()
     fo.close()
 
+    # Se divide el archivo en lista para identificar al jugador
     turno = turno.split(" ")
+
+    # if para saber que jugador eres
     if turno[0] == "1":
         print("Es tu turno, hora de atacar!!")
     else:
         print("No es tu turno, no seas impaciente")
         exit()
 
-def crearTablero(tablero):
-
+def crearTablero(tablero, numBarcos):
+    # lista varia para pasar los datos del txt
     arctxt = []
 
     fo = open("battleship.txt", "r+")
@@ -72,6 +75,9 @@ def tableroaTXT(tablero):
     fo.close()
 
 def main(): 
+    numBarcos = 3
+
+    # Se predefine el tablero como matrix 10x10
     tablero = [[0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0],
@@ -83,12 +89,16 @@ def main():
                [0,0,0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0,0,0]]
 
+    # Se comprueba si es el jugador 1 o 2
     comprobarControl()
-    crearTablero(tablero)
+    # Se genera el tablero
+    crearTablero(tablero, numBarcos)
 
+    # Se imprime el tablero generado
     for i in range(len(tablero)):
         print(tablero[i])
 
+    # Se convierte la matrix a txt
     tableroaTXT(tablero)
 
 main()
