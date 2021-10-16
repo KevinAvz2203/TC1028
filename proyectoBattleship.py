@@ -64,7 +64,7 @@ def tableroaTXT(tablero):
     for i in range(len(tablero)):
         dato = ""
         for j in range(len(tablero[0])):
-            dato = dato +" "+ str(tablero[i][j])
+            dato = dato + str(tablero[i][j]) + " "
         
         fo.write(dato)
         fo.write("\n")
