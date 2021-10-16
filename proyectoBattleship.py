@@ -6,8 +6,6 @@
 
 import random
 import time
-import os
-
 
 """ Requisitos: 
 * Crear un tablero simulado en un .txt por renglones y columnas                                                 
@@ -37,7 +35,7 @@ def comprobarControl():
         print("Es tu turno, hora de atacar!!")
     else:
         print("No es tu turno, no seas impaciente")
-        os.kill()
+        exit()
 
 def crearTablero(tablero):
 
