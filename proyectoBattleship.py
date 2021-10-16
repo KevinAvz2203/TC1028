@@ -6,6 +6,7 @@
 
 import random
 import time
+import os
 
 
 """ Requisitos: 
@@ -36,6 +37,7 @@ def comprobarControl():
         print("Es tu turno, hora de atacar!!")
     else:
         print("No es tu turno, no seas impaciente")
+        os.kill()
 
 def crearTablero(tablero):
 
